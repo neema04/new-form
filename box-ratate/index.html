@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: lightgray;
+        }
+
+        .container {
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            width: 500px;
+        }
+
+        .box {
+            background-color: blueviolet;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            width: 200px;
+            border-radius: 15px;
+            border: 2px solid red;
+            transition: all 1s ease-in-out ;
+         animation-name: icon; 
+         animation-duration: 5s; 
+         animation-iteration-count: 1; 
+         animation-direction: backward; 
+        }
+        @keyframes icon { 
+            from{
+               width: 100px;
+            }
+            to {
+                width:500px ;
+            }
+        }
+
+        .box:hover{
+            background: rebeccapurple;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">box</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number method</title>
+</head>
+<body>
+    <script>
+        const num=1.473
+        //toFixed()->used for how many digits to be printed after the decimal points
+        document.write(`${num.toFixed(2)} <br>`) 
+        document.write(`${num.toFixed(4)} <br>`) 
+        //toPrecision() -> used for how many digits to be printed as a whole
+        document.write(`${num.toPrecision(2)}<br>`)
+        document.write(`${num.toExponential(2)}<br>`)
+        //to conveeeeeeeeeeeeeert string to number use the following mthods
+        //Number() ->12,12.5
+        //parseInt() ->12,15
+        // parseFloat() ->14.5,20
+        const age=parseInt("12.5 years")
+
+
+        // const age=parseFloat("12.5 years")
+
+        document.write(`${age} <br>`)
+    </script>
+</body>
+</html>

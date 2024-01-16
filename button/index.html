@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div class="box">
+            <button type="button" onclick="fetchData()">Click me</button>
+        </div>
+        <div class="text">
+            <textarea id="textBox" placeholder="text here" rows="10" cols="40"></textarea>
+        </div>
+    </div>
+    <script>
+        function fetchData() {
+          fetch("https://jsonplaceholder.typicode.com/todos/1")
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(json);
+              document.getElementById("textBox").value = JSON.stringify(json,null,2);
+            });
+        }
+      </script>
+</body>
+</html>

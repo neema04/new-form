@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" name="pwd" id="pwd">
+    <h3 id="result"></h3>
+    <script>
+        const pwdInput=document.getElementById('pwd')
+        pwdInput.addEventListener('keyup',()=>{
+            document.querySelector('h3').innerHTML=pwdInput.value
+        })
+        // const show=()=>{
+        //     document.querySelector('h3').innerHTML=pwdInput.value;
+        // }
+        // pwdInput.addEventListener('keyup',show)
+    </script>
+
+    <!-- <input type="password" name="pwd" id="pwd" onkeyup="show()">
+    <h3 id="result"></h3>
+    <script>
+        const show=()=>{
+            const pwdInput=document.getElementById('pwd').value
+            document.querySelector('#result').innerHTML=pwdInput
+        }
+    </script> -->
+</body>
+</html>

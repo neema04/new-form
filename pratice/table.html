@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="table.css">
+    <title>Document</title>
+
+</head>
+<body>
+    <table id="attendanceTable">
+        <thead>
+            <tr>
+                <th colspan="11">Blueprint Technologies Pvt. Ltd.</th>
+            </tr>
+            <tr>
+                <th colspan="11"> Attendance for the month Mangsir 2080</th>
+            </tr>
+        </thead>    
+    <tbody id="employeeRows">
+            <tr class="day">
+                <th>Day</th>
+            </tr>
+            <tr class="date-time">
+                <th >Date and time </th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Neema Limbu</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+            </tr>
+            <tr>
+                <th>&nbsp;</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+    </tbody>   
+    </table>
+    
+    <div class="button">
+        <button type="button" onclick="addEmployee()">ADD</button>
+    </div>
+
+    <div class="box">
+        <label for="employeeName">Employee Name</label>
+        <input type="text" id="employeeName" placeholder="Enter employee name">
+    </div>
+
+    <!-- <template id="myTemplate">
+        <tr>
+            <th rowspan="2" class="employeeName"></th>
+            <th>In</th>
+            <th>Out</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>In</th>
+            <th>Out</th>
+        </tr>
+    </template>
+
+    <template id="myTemplate2">
+        <tr  colspan="5" colspan="6" id="timeTr">
+            <th rowspan="2" class="employeeName">&nbsp; 
+                <input type="time" class="checkIn">
+            </th>
+            <th>
+                <input type="time" class="checkOut">
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>  
+        </tr>
+    </template> -->
+
+<script src="main.js">
+    function getDate() {
+        function getDate() {
+    var currentYear = new Date().getFullYear();
+    var currentMonth = new Date().getMonth() + 1;
+    var currentDate = new Date().getDate()
+    console.log(currentYear)
+    return `${currentYear} / ${currentMonth} / ${currentDate}`;
+}
+
+const todayDate = getDate()
+
+function getCurrentTime() {
+    const now = new Date();
+    const hours = now.getHours().toString();
+    const minutes = now.getMinutes().toString();
+    return hours + ':' + minutes;
+}
+
+let myDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+for(let i = 0 ; i<myDays.length ; i++) {
+    const dateTr = document.querySelector('.date-time')
+    const dateTh = document.createElement('th')
+    dateTh.colSpan = '2'
+    if (i === new Date().getDay() - 1) { dateTh.innerHTML = todayDate;
+
+    } else {
+        dateTh.innerHTML = '';
+    }
+    dateTr.appendChild(dateTh)
+}
+
+for(let i=0; i<myDays.length ; i++) {
+    const myTr = document.querySelector('.day')
+    const myTh = document.createElement('th')
+    myTh.colSpan = '2'
+    myTh.innerHTML = myDays[i]
+    myTr.appendChild(myTh)
+}
+
+function displayEmployeeRecords() {
+    let employeeArray = JSON.parse(localStorage.getItem('employee_data')) || []
+    return employeeArray
+}
+
+function addEmployee() {
+    const employeeNameInput = document.getElementById("employeeName")
+    const employeeIdInput = document.getElementById("employee_id")
+
+    const employeeName = employeeNameInput.value.trim()
+    const employeeId = employeeIdInput.value.trim()
+
+    if (employeeName === "") {
+        alert("Please enter the employee name.");
+        return;
+    }
+
+    const employeeData = displayEmployeeRecords()
+
+    employeeData.push({
+        'id': employeeId,
+        'name': employeeName
+        
+    })
+
+    localStorage.setItem('employee_data', JSON.stringify(employeeData))
+//
+    addRows(employeeName)
+
+    employeeNameInput.value = ''
+    employeeIdInput.value = ''
+
+    displayEmployeeRecords()
+
+    alert('New record added')
+}
+
+function addRows(employeeName) {
+    const tbody = document.querySelector('#employeeRows')
+    const row = document.createElement('tr')
+
+    const nameCell = document.createElement('th');
+    nameCell.textContent = employeeName;
+    row.appendChild(nameCell);
+
+    for(let i = 0 ; i<myDays.length ; i++) {
+        const inTh = document.createElement('th')
+        const outTh = document.createElement('th')
+        const inButton = document.createElement('button')
+        const outButton = document.createElement('button')
+        if (i === new Date().getDay() - 1) { 
+            inButton.textContent = 'In'
+            outButton.textContent = 'Out'
+
+            inButton.addEventListener('click', function() {
+                inTh.textContent = getCurrentTime()
+                const employeeData = displayEmployeeRecords();
+                localStorage.setItem('employee_data', JSON.stringify(employeeData));
+
+            })
+
+            outButton.addEventListener('click', function() {
+                outTh.textContent = getCurrentTime()
+
+            })
+
+            inTh.appendChild(inButton)
+            outTh.appendChild(outButton)
+        } else {
+            inTh.innerHTML = '';
+            outTh.innerHTML = '';
+        }
+        row.appendChild(inTh);
+        row.appendChild(outTh);
+    }
+
+    tbody.appendChild(row)
+}
+
+const records = displayEmployeeRecords()
+records.map((item) => {
+    addRows(item.name) 
+})
+</script>
+</body>
+</html>

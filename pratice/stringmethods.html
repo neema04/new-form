@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const text='welcome everyone, today we are learning programming.Today is sunny,its going to rain today.today is gooday for learning to ride bicycle'
+        document.write(`${text}<br>`)
+        document.write(`${text.length}<br>`)
+        document.write(`${text.indexOf('nce')}<br>`)
+        document.write(`${text.search('nce')}<br>`)
+        document.write(`${text.lastIndexOf('to')}<br>`)
+        document.write(`${text.replace('learning','reading')}<br>`)
+        document.write(`${text.replaceAll(/today/gi,'now')}<br>`)
+        // /gi makes case insensitive(global insensitive) and replaceAll replaces all and replace will replace only particular
+        
+        // substring ->small part of string 
+        // substring (start,end)->(0,20)
+        // substr (start,length)->(5,20)
+        // slice (start,end)->(5,20)
+        document.write(`${text.substring(0,22)}<br>`)
+        document.write(`${text.slice(5,22)}<br>`)
+        document.write(`${text.substr(5,19)}......<br>`)
+        //toUpperCase()
+        //toLowerCase()
+        document.write(`${text.toUpperCase()}<br>`)
+        document.write(`${text.toLowerCase()}<br>`)
+        ///toString()->convert any data type to string
+        //includes() ->return true if specific string is present
+        document.write(`${text.includes('to')}<br>`)
+
+        document.write(`${text.split('')}<br>`)
+        //indexing
+        document.write(`${text[0]}<br>`)
+        document.write(`${text[3]}<br>`)
+        //.concat()
+        document.write('hello '.concat(text)+'<br>')
+        //trim()-> remove the whitespaces
+        test='   hello'
+        document.write(`${test.trim()}<br>`)
+        //match()-> return the matching result
+        document.write(`${text.match(/today/g)}<br>`)
+
+        document.write(`${text.match(/today/gi)}<br>`)
+    </script>
+</body>
+</html>

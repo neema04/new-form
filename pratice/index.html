@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        table {
+            width: 100%;
+            max-width: 8000px; 
+            border-collapse: collapse;
+            margin: 10px;
+        }
+        table,th,tr,td{
+            border: 1px solid blue;
+            border-collapse: collapse ;
+        }
+        tr.day{
+          background-color: lightgray; 
+        }
+        tr.date-time{
+            background-color: lightgray;
+        }
+        .button {
+            margin-top: 20px; 
+            text-align: end;
+        }
+
+        .button button {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 14px; 
+            transition: background-color 0.3s;
+        }
+
+        .button button:hover {
+            background-color: #045642; 
+        }
+        .box{
+            
+        }
+/* 
+        #myTemplate2 {
+            margin-top: 20px; 
+            text-align: end;
+        }
+        #myTemplate2 {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 14px; 
+            transition: background-color 0.3s;
+        } */
+
+        
+        
+    </style>
+</head>
+<body>
+    <table id="attendanceTable">
+        <thead>
+            <tr>
+                <th colspan="11">Blueprint Technologies Pvt. Ltd.</th>
+            </tr>
+            <tr>
+                <th colspan="11"> Attendance for the month Mangsir 2080</th>
+            </tr>
+        </thead>    
+    <tbody id="employeeRows">
+            <tr class="day">
+                <th>Day</th>
+            </tr>
+            <tr class="date-time">
+                <th>Date and time</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+            </tr>
+
+            <tr>
+                <th rowspan="2">Suraj Shrestha</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+            </tr>
+            <tr>
+                <th>9:31</th>
+                <th>6:28</th>
+                <th>9:25</th>
+                <th>6:33</th>
+                <th>9:27</th>
+                <th>6:38</th>
+                <th>9:19</th>
+                <th>6:28</th>
+                <th>9:28</th>
+                <th>2:00</th>
+            </tr>
+            <!-- <tr>
+                <th rowspan="2">Gunjan Babu Shrestha</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+            </tr>
+            <tr>
+                <th>9:31</th>
+                <th>6:28</th>
+                <th>9:25</th>
+                <th>6:33</th>
+                <th>9:27</th>
+                <th>6:38</th>
+                <th>9:19</th>
+                <th>6:28</th>
+                <th>9:28</th>
+                <th>6:14</th>
+            <tr>
+                <th rowspan="2">Narayan Prasad Twayana</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+            </tr>
+            <tr>
+                <th>9:48</th>
+                <th>6:25</th>
+                <th>9:45</th>
+                <th>6:33</th>
+                <th>9:47</th>
+                <th>6:31</th>
+                <th>9:33</th>
+                <th>6:21</th>
+                <th>9:48</th>
+                <th>6:48</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Dinesh Budathoki</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+            </tr>
+            <tr>
+                <th>9:55</th>
+                <th>6:20</th>
+                <th>9:38</th>
+                <th>6:30</th>
+                <th>10:00</th>
+                <th>6:30</th>
+                <th>9:30</th>
+                <th>6:20</th>
+                <th>1:07</th>
+                <th>6:30</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Sumitra Joshi</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+            </tr>
+            <tr>
+                <th>p</th>
+                <th>p</th>
+                <th>p</th>
+                <th>p</th>
+                <th>p</th>
+                <th>p</th>
+                <th>p</th>
+                <th>p</th>
+                <th>p</th>
+                <th>p</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Binod Shyama</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+            </tr>
+            <tr>
+                <th>9:00</th>
+                <th>6:25</th>
+                <th>9:48</th>
+                <th>6:35</th>
+                <th>9:50</th>
+                <th>6:35</th>
+                <th>10:35</th>
+                <th>6:25</th>
+                <th>9:45</th>
+                <th>6:45</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Sushant Shrestha</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+            </tr>
+            <tr>
+                <th>10:35</th>
+                <th>6:00</th>
+                <th>A</th>
+                <th>A</th>
+                <th>A</th>
+                <th>A</th>
+                <th>A</th>
+                <th>A</th>
+                <th>A</th>
+                <th>A</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Aleeda Maharjan</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+            </tr>
+            <tr>
+                <th>&nbsp;</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <!-- <th>11:31</th>
+                <th>4:37</th>
+                <th>10:19</th>
+                <th>5:00</th>
+                <th>11:32</th>
+                <th>4:34</th>
+                <th>10:14</th>
+                <th>4:07</th>
+                <th>12:36</th>
+                <th>5:05</th> -->
+            </tr> -->
+            <tr>
+                <th rowspan="2">Neema Limbu</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>In</th>
+                <th>Out</th>
+            </tr>
+            <tr>
+                <th>&nbsp;</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <!-- <th>1:09</th>
+                <th>6:25</th>
+                <th>1:20</th>
+                <th>5:00</th>
+                <th>12:23</th>
+                <th>6:00</th>
+                <th>2:22</th>
+                <th>6:00</th>
+                <th>12:29</th>
+                <th>6:00</th> -->
+            </tr>
+    </tbody>   
+    </table>
+    
+    <div class="button">
+        <button type="button" onclick="addEmployee()">ADD</button>
+    </div>
+
+    <div class="box">
+        <label for="employeeName">Employee Name</label>
+        <input type="text" id="employeeName" placeholder="Enter employee name">
+    </div>
+
+    <template id="myTemplate">
+        <tr>
+            <th rowspan="2" class="employeeName"></th>
+            <th>In</th>
+            <th>Out</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>In</th>
+            <th>Out</th>
+        </tr>
+    </template>
+
+    <template id="myTemplate2">
+        <tr  colspan="11" >
+            <th rowspan="2" class="employeeName">&nbsp; 
+                <input type="time" class="checkIn">
+            </th>
+            <th>
+                <input type="time" class="checkOut">
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>  
+        </tr>
+    </template>
+
+<script>
+    function getData() {
+        var currentYear = new Date().getFullYear();
+        var currentMonth = new Date().getMonth() +1;
+        var currentDate = new Date().getDate();
+        console.log(currentYear)
+        return ` ${currentYear} / ${currentMonth} / ${currentDate}`;
+
+    }
+    const todayDate = getData()
+    console.log(todayDate)
+
+    console.log(new Date().getDate())
+
+    let myDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+    for(let i = 0 ; i<myDays.length ; i++) {
+        const dateTr = document.querySelector('.date-time')
+        const dateTh = document.createElement('th')
+        dateTh.colSpan = '2'
+        if (i === new Date().getDay() - 1) { dateTh.innerHTML = todayDate;
+
+        } else {
+            dateTh.innerHTML = '';
+        }
+        dateTr.appendChild(dateTh)
+    }
+
+    for(let i=0; i<myDays.length ; i++) {
+        const myTr = document.querySelector('.day')
+        const myTh = document.createElement('th')
+        myTh.colSpan = '2'
+        myTh.innerHTML = myDays[i]
+        myTr.appendChild(myTh)
+    }
+
+
+    function addEmployee() {
+        var employeeName = document.getElementById("employeeName").value.trim();
+
+        if (employeeName === "") {
+        alert("Please enter the employee name.");
+        return;
+        }
+
+        var row1 = document.getElementById("myTemplate").innerHTML;
+        var row2 = document.getElementById('myTemplate2').innerHTML;
+
+
+        var table = document.getElementById('attendanceTable');
+        var employeeRows = document.getElementById('employeeRows');
+    
+
+
+        
+        var newRow =  employeeRows.insertRow(employeeRows.rows.length);
+        newRow.innerHTML = row1;
+
+        var template = document.getElementById('myTemplate2');
+        var timeTr = document.getElementById('timeTr');
+
+        var employeeField = newRow.querySelector(".employeeName");
+        employeeField.innerHTML = `
+            <button onclick="handleCheckIn('${employeeName}')">Check In</button>
+            <button onclick="handleCheckOut('${employeeName}')">Check Out</button>
+            ${employeeName}
+        `;
+
+        var newRow2 = employeeRows.insertRow(employeeRows.rows.length);
+        newRow2.innerHTML = row2;
+
+        document.getElementById('employeeName').value = '';
+
+
+
+     
+
+}
+
+
+    
+
+    
+</script>
+</body>
+</html>

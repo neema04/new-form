@@ -1,0 +1,92 @@
+body > table{
+    width: 80%;
+   
+}
+
+table{
+    border-collapse: collapse;
+    max-width: 8000px;
+}
+table.list{
+    width: 100%;
+}
+
+td,th {
+    border: 1px solid whitesmoke;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even),table.list thead>tr{
+    background-color: aliceblue;
+}
+
+input[type=text], input[type=tel] {
+    width:100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border:1px solid whitesmoke;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.date{
+    width:100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border:1px solid whitesmoke;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form div.form-action-buttons{
+    text-align: right;
+}
+
+a{
+    cursor:pointer;
+    text-decoration: underline;
+    color:rgb(255, 149, 0);
+    margin-right: 4px;
+}
+
+label.validation-error{
+    color: red;
+    margin-left: 5px;
+}
+
+.hide{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

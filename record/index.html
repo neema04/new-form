@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Keeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <form id="recordForm" autocomplete="off">
+                    <div>
+                        <label>Full Name</label>
+                        <input type="text" name="fullName" id="fullName">
+                        <div id="fullNameValidationError" class="hide">Please enter a valid name.</div>
+                    </div>
+                    <div>
+                        <label>Contact Number</label>
+                        <input type="tel" name="contactNumber" id="contactNumber" pattern="[0-9]+" title="Please enter only numeric characters">
+                    </div>
+                    <div>
+                        <label>Address</label>
+                        <input type="text" name="address" id="address"> 
+                    </div>
+                    <div>
+                        <label>Date of Birth</label>
+                        <div class="date">
+                            <input type="date" name="date" id="date">
+                        </div>
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="button" value="Submit" onclick="onFormSubmit()">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                           <th>Full Name</th>  
+                           <th>Contact Number</th>
+                           <th>Address</th>
+                           <th>BirthDate</th>
+                           <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+body{
+    /* background: rgb(234, 220, 220); */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper .swiper-slider{
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+}

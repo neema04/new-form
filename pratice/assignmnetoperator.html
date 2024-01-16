@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        <!-- += e:g x+=y is same as x=x+y
+        -= is x=x-y
+        *= wprks same
+        /=
+        **=
+        %= -->
+
+    </pre>
+    <script>
+        let x=2
+        let y=21
+        x+=y
+        document.write( `<h2>${x}</h2>`)
+        x*=7
+        document.write(`${x}`)
+
+        //comparison operator
+        // <,>,<=,>==,!=,=== ++ --
+        // ===comparison between value and data type
+        document.write(x>y)
+        document.write(`<br>`)
+        document.write(`3`===3)
+        // value 3 is same but not data type is false
+
+        //logical operator
+        //or(||) return true if one condition is true otherwise its false
+        //&& returns if all conditon is true otherwise false
+        // ! not = returns opposite result
+
+        const a=3
+        const b=5
+        const c=4
+        document.write(`<br>`)
+        document.write(a<b && b<c)
+        document.write(`<br>`)
+        document.write(a<b && b>c)
+        document.write(`<br>`)
+        document.write(a<b || b<c)
+        
+
+
+
+
+    </script>
+</body>
+</html>

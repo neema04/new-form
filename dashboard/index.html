@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+            outline: none;
+            border: none;
+      
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            box-sizing: border-box; 
+            /* border: none; */
+        }
+        body {
+            display: flex;
+        }
+        .sidebar{
+            position: sticky;
+            top: 0px;
+            left: 0px; 
+            bottom: 0px;
+            overflow: hidden;
+            width: 75px;
+            /* width: 100px; */
+            height: 800px;
+            padding: 0 4px ;
+            /* color: rgb(0, 158, 53); */
+            background: rgb(32, 10, 53);
+            transition: all 0.5s linear;
+            gap: 10px;
+            font-size: 20px;
+         
+        }
+        .sidebar:hover {
+            width: 400px;
+            transition: 0.5s;
+        }
+        .logo{
+            height: 80px;
+            padding: 20px;
+        }
+        .menu{
+            height: 100px;
+            position: relative;
+            list-style: none;
+            padding: 0;
+            /* gap: 100px; */
+        }
+        .menu li {
+            padding: 10px;
+            margin: 15px;
+            border-radius: 8px;
+            transition: all 0.5s ease-in-out;
+        }
+        /* dashboard hover */
+        .menu li:hover,
+        .active {
+           background-color: rgb(67, 72, 173);
+        }
+        .menu li:hover {
+           background-color: rgb(67, 72, 173);
+        }
+        .menu a {
+           color: white;
+           font-size: 20px; 
+           text-decoration:none ;
+           align-items: center;
+           display: flex;
+           gap: 18px;
+
+        }
+        .menu a span{
+            overflow: hidden;
+            
+        }
+        .menu a i{
+            font-size: 30px;
+            
+        }
+        .logout{
+          position: absolute;
+          bottom: -600px;
+          left: 0;
+          width: 100%;
+
+        }
+        .search--box i{
+            height: 10px;
+            
+        }
+
+        .main--content{
+            position: relative;
+            background:rgb(196, 185, 196);
+            width: 100%;
+            padding: 1rem;
+        }
+        .header--wrapper img{
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+        .header--wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            background: rgb(241, 241, 247);
+            border-radius: 15px;
+            padding: 10px 2rem;
+            margin-bottom: 1rem;   
+        }
+        
+        .header--title{
+            color: burlywood;
+            position: relative;
+           
+            /* top: 10px;
+            left: -250px; */
+            /* right: 320px;
+            bottom: 350px; */
+        }
+        .user--info {
+           display: flex;
+           align-items: center;
+           gap: 10px; 
+          
+        }
+        .search--box{
+            background-color:whitesmoke ;
+            border-radius: 15px;
+            color: royalblue;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 12px;
+        
+           
+            
+        }
+        .search--box input{
+            background: white(206, 222, 222);
+            padding: 10px;
+        }
+        .search--box i {
+            height: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+
+        }
+        .search--box i:hover{
+            transform: scale(1.2);
+        }
+        .card--container{
+            background: rgb(241, 241, 247);
+            height: 200px;
+            width: 500px; 
+            padding: 0 600px;
+            border-radius: 15px;
+           
+        }
+        .card--wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            /* padding: 10px; */
+
+        }
+        .main--title{
+            color: yellowgreen;
+            padding-bottom: 10px;
+            font-size: 10px;
+        }
+        .payment--card{
+            background:pink;
+            border-radius: 10px;
+            padding: 2rem;
+            width: 250px;
+            height: 150px;
+            display:flex ;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 2s ease-in-out;
+        }
+        .payment--card:hover {
+            transform: translateY(-5px);
+        }
+        .card--header{
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            margin-bottom: 20px;
+        }
+        .amount{
+            display: flex;
+            flex-direction: column;
+        }
+        .title{
+            font-size: 12px;
+            font-weight: 200;
+        }
+        .amount--value{
+           font-size: 24px;
+           font-family: 'Courier New', Courier, monospace;
+           font-weight: 600; 
+        }
+        .icon{
+            color:white;
+            padding: 1rem;
+            height: 60px;
+        }
+        
+
+
+
+
+
+
+
+
+/* try by removing .active */
+
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li class="active">
+                <a href="#">
+                    <i class='bx bxs-dashboard'></i>
+                    <span> Dashboard </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-user'></i>
+                    <span> Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-chart'></i>
+                    <span>Statistics</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-briefcase'></i>
+                    <span>careers</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-question-mark'></i>                    
+                    <span>FAQ</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-star'></i>
+                    <span>Testimonials</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-cog'></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li class="logout">
+                <a href="#">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>              
+    </div> 
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>Primary</span>
+                <h2>  DASHBOARD </h2>
+            </div> 
+            <div class="user--info">
+                <div class="search--box">
+                    <i class='bx bx-search'></i> 
+                    <input type="text" placeholder="search" />
+                </div>  
+                <img src="lotus.jpg"  alt="" height="40" width="60" />
+              
+            </div> 
+        </div>     
+            <div class="card--container">
+                <h3 class="main--title"> Today's  data</h3>
+                <div class="card--wrapper">
+                     <div class="payment--card">
+                        <div class="card--header">
+                            <div class="amount">
+                                <span class="title">Payment Amount</span>
+                                <span class="amount">$10000</span>
+                            </div>
+                            <i class='bx bxs-dollar-circle'></i>
+                        </div>
+                        <span class="card-detal">***** *** 888</span>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+          
+</body>
+</html>

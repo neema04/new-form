@@ -1,0 +1,18 @@
+#main {
+    width: 100%;
+    max-width: 800px;
+    margin: 100px;
+}
+
+.box {
+    left: 190px;
+    position: relative;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+   
+}
+.text{
+    margin: 2rem; 
+    text-align: end;
+}

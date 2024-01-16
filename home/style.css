@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+}
+.name{
+        letter-spacing: 15px;
+        font-size: 50px;
+        left: 20;
+        top: 10px; /* Adjust this value as needed */
+        max-width: 280px;
+        width: 4%;
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+        height: 50%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        transform: rotate(90deg);
+        z-index: 2; /* Adjust this value */
+  
+    
+}
+.title{
+
+        letter-spacing: 5px;
+        font-size: 20px;
+        left: 20;
+        top: 10px; /* Adjust this value as needed */
+        width: 100%;
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+        height: 100%;
+}
+.sidebar{
+    position: sticky;
+    top: 0px;
+    left: 0px; 
+    bottom: 0px;
+    overflow: hidden;
+    width: 75px;
+    /* width: 100px; */
+    height: 800px;
+    padding: 0 4px ;
+    /* color: rgb(0, 158, 53); */
+    background: rgb(32, 10, 53);
+    transition: all 0.5s linear;
+    gap: 10px;
+    font-size: 20px;
+ 
+}
+
+.side li:hover,
+.active {
+   background-color: rgb(67, 72, 173);
+}
+.side li:hover {
+   background-color: rgb(67, 72, 173);
+}
+.side a {
+   color: white;
+   font-size: 20px; 
+   text-decoration:none ;
+   align-items: center;
+   display: flex;
+   gap: 18px;
+
+}
+.side a span{
+    overflow: hidden;
+    
+}
+.side a i{
+    font-size: 30px;
+    
+}

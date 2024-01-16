@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date method</title>
+</head>
+<body>
+    <script>
+        const date=new Date()
+        document.write(`${date}<br>`)
+        //timestamp
+        //to get year use .getFullYear()
+        document.write(`${date.getFullYear()}<br>`)
+        //to get month use .getMonth ->returns value from 0 -11 
+        document.write(`${date.getMonth()}<br>`)
+        //to get day of the week use .getDay -> return 0-6 (0 means sunday and 6 as saturday indexing)
+        document.write(`${date.getDay()}<br>`)
+        //to get date use .getDate() -> 1-31
+        document.write(`${date.getDate()}<br>`)
+        //to get hours use getHours() ->0-23
+        document.write(`${date.getUTCHours()}<br>`)
+        document.write(`${date.getUTCMinutes()}<br>`)
+
+        document.write(`${date.getHours()}<br>`)
+
+        //to get second use .getMinutes ->0-59
+        document.write(`${date.getMinutes()}<br>`)
+        //to get second use .getseconds ->0-59
+        document.write(`${date.getSeconds()}<br>`)
+        //to get second use .getMilliseconds() ->0-999
+        document.write(`${date.getMilliseconds()}<br>`)
+        //to get full time
+        //can we change date into string?we can
+        document.write(`${date.toLocaleDateString()}<br>`)
+
+        //set methods
+        // document.write(`${date.setFullYear(2030)}`)
+         const d=new Date()
+         d.setFullYear(2030,1,4)
+         document.write(`${d}<br>`)
+         date.setHours(20)
+         document.write(`${date}<br>`)
+
+        //set interval()
+        const demoFunction=()=>{
+            document.querySelector('h1').innerHTML=new Date().
+            toLocaleTimeString()
+        }
+        setInterval(demoFunction,1000)//1000milliseconds is 1 sec
+
+    </script>
+    <h1></h1>
+</body>
+</html>
